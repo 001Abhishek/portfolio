@@ -1,0 +1,35 @@
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color: rgba(209, 218, 209, 0.4);
+    border: 1px solid rgb(26, 25, 25);
+    /* //margin-left:25px;
+    //margin-right: 25px; */
+    border-radius: 50%;
+}
+.container{
+    text-align: center;
+    font-size: 1rem;
+}
+.p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000;
+    padding: 8px;
+    margin: 8px;
+}
+.hr{
+    width: 50%;
+}
+@media only screen and (min-width: 778px){
+    .image{
+    height: 315x;
+    width: 216px;  
+    /* border-radius: 50%; */
+
+    } 
+}
