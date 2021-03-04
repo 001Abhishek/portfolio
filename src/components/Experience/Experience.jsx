@@ -3,7 +3,7 @@ import styles from './Experience.module.css'
 
 const Experience = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-aos="fade-up" data-aos-duration="3000">
           <h2>Experience</h2>  
           <ul>
       <li>

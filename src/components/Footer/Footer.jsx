@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
     return (
-        <div className={styles.socialContainer}>
+        <div className={styles.socialContainer} data-aos="fade-right" data-aos-duration="3000">
           <h2>Follow me</h2>
       <a href="https://www.youtube.com/channel/UCpud0pGbrDLfA3g5CnmjYcA/featured"
         className="youtube social">
