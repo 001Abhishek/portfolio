@@ -18,13 +18,24 @@
 }
 li{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #000;
+    color: rgb(243, 237, 237);
     padding: 8px;
     margin: 8px;
 }
 .hr{
     width: 50%;
 }
+h1,h3{
+    color: white;
+}
+p,span{
+    color: white;
+}
+.img{
+    width: 90%;
+    height: 260px;
+}
+
 @media only screen and (min-width: 778px){
     .image{
     height: 315x;
@@ -32,4 +43,9 @@ li{
     /* border-radius: 50%; */
 
     } 
+    .img{
+        height: 400px;
+    width: 80%;  
+    }
+    
 }

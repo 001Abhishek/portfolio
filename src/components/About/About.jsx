@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './About.module.css';
 import Typewriter from 'typewriter-effect';
+import Gif from '../../images/gif.gif';
 
 
 const About = () => {
@@ -11,14 +12,17 @@ const About = () => {
            
             <hr className={styles.hr}></hr>
             {/* <p>Full stack Java developer | Aspiring Blogger </p> */}
-            <Typewriter
+            <Typewriter className={styles.typewriter}
                 options={{
-                    strings: [ "A Full stack Java developer", "Aspiring Blogger", "Movie Buff", "Sports Enthusiast", "...and much more"],
+                    strings: [ "<span>A Full stack Java developer", "<span>Aspiring Blogger", "<span>Movie Buff", "<span>Sports Enthusiast", "<span>...and much more"],
                     autoStart: true,
                     loop: true,
                 }}
             />
             <br></br>
+           
+           <img className={styles.img} data-aos="zoom-in" data-aos-duration="2000" src={Gif} alt="" />
+
             <div class="row">
                 <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
                     <li>
