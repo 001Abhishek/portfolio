@@ -10,7 +10,7 @@ const About = () => {
         <p>Full stack Java developer | Aspiring Blogger </p>
         <br></br>
         <div class="row">
-	    <div class="col-sm-6">
+	    <div class="col-sm-6" data-aos="flip-left" data-aos-easing="ease-out-back" data-aos-duration="1300">
     	<li>
             I have almost 2 years of experience as a software developer at Tata Consultancy Services.
             I have worked on both backend as well as frontend technologies such as JSP, JS, Java/J2EE, Liferay DXP, Jquery and CSS.
@@ -26,7 +26,7 @@ const About = () => {
             responsibilites, and gain experience with architecture and system design.
             </li>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" data-aos="flip-left" data-aos-easing="ease-out-back" data-aos-duration="1300">
 		    <h3>Highlights</h3>
 		    <ul>
             <li>
