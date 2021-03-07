@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './About.module.css';
 import Typewriter from 'typewriter-effect';
 import Gif from '../../images/gif.gif';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
     return (
         <div className={styles.container}>
             <img className={styles.image} data-aos="zoom-in" data-aos-duration="3000" src="https://avatars.githubusercontent.com/u/32428235?s=400&v=4" alt="" />
-            <h1 class="display-4" >Hi, I'm Abhishek Pathania</h1>
+            <h1 class="display-4 font-effect-neon" >Hi, I'm Abhishek Pathania</h1>
 
             <hr className={styles.hr}></hr>
             {/* <p>Full stack Java developer | Aspiring Blogger </p> */}
@@ -41,7 +42,7 @@ const About = () => {
             </li>
                 </div>
                 <div class="col-sm-6" data-aos="fade-up" data-aos-duration="2500">
-                    <h3>Highlights</h3>
+                   <span className={styles.highlight}><FontAwesomeIcon className={styles.icn} icon={ faFire } /> <h3>Highlights</h3></span>
                     <ul>
                         <li>Presented research and proof-of-concept for a large banking client based in Europe to move from existing technological stack to Liferay DXP.
           </li>

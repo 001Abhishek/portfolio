@@ -1,10 +1,17 @@
 import React from 'react';
 import styles from './Experience.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+
 
 const Experience = () => {
     return (
-        <div className={styles.container} data-aos="fade-up" data-aos-duration="3000">
-          <h2>Experience</h2>  
+        <div className={styles.container} data-aos="fade-up" data-aos-duration="3000">      
+
+<span className={styles.experience}>
+<FontAwesomeIcon className={styles.icn} icon={ faLaptopCode } />
+<h2>Experience</h2> </span>
+ 
           <ul>
       <li>
         <div>Tata Consultancy Services(2020-Present)</div>
