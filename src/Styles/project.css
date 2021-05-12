@@ -1,0 +1,31 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.projectArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.projectArea .projectTitle a{
+    text-decoration: none;
+    font:black;
+}
+
+.projectArea .projectPara{
+    color: #0c0101;
+}
+
+/* Media Query For Mobiles */
+
+@media (max-width: 768px){
+    .projectArea{
+        margin-left: 2rem;
+    }
+    .projectArea .projectPara{
+        padding-left: 1rem;
+    }
+}

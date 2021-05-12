@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.projectsArea{
+    /* margin-top: 2rem; */
+    font-family: 'Varela Round', sans-serif;
+}
+hr{
+    margin-top: 15px;
+    height: 5px;
+    max-width: 50px;
+    background-color: #2d283e;
+}
+
+.projectsTitle{
+    font-family: "Titillium Web", sans-serif;
+    margin-top: 50px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.text{
+    font-family: 'Caveat', cursive;
+   
+}
+
