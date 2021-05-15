@@ -1,9 +1,10 @@
-.experience-container {
+.experience-container{
     font-family: "Titillium Web", sans-serif;
     margin-top: 50px;
     flex-direction: column;
     text-align: center;
 }
+
 
 .experience-container hr {
     margin-top: 15px;
@@ -32,4 +33,5 @@
 
 .experience-container li {
     list-style-type: circle;
+    font-weight: bold;
 }

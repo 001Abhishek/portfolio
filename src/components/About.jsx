@@ -61,10 +61,10 @@ const About = () => {
       >
         <div className="col-sm-6">
           <p>
-            I am willing to work on both the front-end and the back-end of 
+            I am willing to work on front-end and back-end of 
             applications. I am interested in building scalable projects,
             and managing large code bases. Currently, I am learning React and Spring Boot.
-            In my spare time I work on various
+            In my spare time I work on
             different projects to build my skills and continue learning.
           </p>
         </div>
