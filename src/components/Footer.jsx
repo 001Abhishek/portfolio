@@ -8,13 +8,13 @@ export default function Footer() {
     <footer className="page-footer">
       <div className="footer-content">
           <div className="container">
-            <div className="row justify-content-center title">
+            <div className="row justify-content-center title" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
               <h1>Contact Me</h1>
             </div>
             {/* <div className="row">
               <div className="col-lg-7">
                 */}
-                <div className="row justify-content-center title">
+                <div className="row justify-content-center title" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
 
                   <a href="https://github.com/001Abhishek">
                     <div className="col-md-2">

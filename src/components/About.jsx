@@ -10,7 +10,7 @@ const About = () => {
         <h1>About Me</h1>
         <hr />
       </div>
-      <div className="row front-end">
+      <div className="row front-end" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         <img src={FrontEndImg} id="invisible-skills-img" />
 
         <ul>
@@ -24,7 +24,7 @@ const About = () => {
         <img src={FrontEndImg} id="skills-img-disappear" />
       </div>
 
-      <div className="row back-end">
+      <div className="row back-end" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         <img src={BackEndImg} id="skills-img" />
 
         <ul>
@@ -37,7 +37,7 @@ const About = () => {
         </ul>
       </div>
 
-      <div className="row extra-skills">
+      <div className="row extra-skills" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         JAVA Object Oriented Programming | Data Structures and Algorithms 
         Software Design and Architectures - SOLID, MVC | Git |
         NPM |JIRA, SonarLint | JUnit | Jenkins
@@ -56,7 +56,7 @@ const About = () => {
       </div> */}
 
       <div
-        className="row text-center justify-content-center about-description"
+        className="row text-center justify-content-center about-description " data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600"
         style={{ marginBottom: 20 }}
       >
         <div className="col-sm-6">

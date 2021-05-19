@@ -6,7 +6,7 @@ export default function Experience() {
     <div className="experience-container">
       <h1>Experience</h1>
       <hr />
-      <div className="container-fluid experience">
+      <div className="container-fluid experience" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         <div className="row justify-content-center">
           <div className="col-lg-4">
             <h1>Tata Consultancy Services</h1>
