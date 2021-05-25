@@ -43,22 +43,20 @@
     max-width: 320px;
   }
   
-  .row.extra-skills,
-  .extra-skills-invisible {
+  .row.extra-skills
+   {
     justify-content: center;
     margin-top: 80px;
     font-size: 25px;
     background-color: #2d283e;
     padding: 10px;
     color: aliceblue;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
     border-radius: 8px;
   }
   
-  .row.extra-skills-invisible {
-    display: none;
-  }
+
   
   .row.text-center.justify-content-center.about-description {
     margin-top: 80px;
@@ -90,16 +88,10 @@
     .row.back-end ul {
       margin-top: 50px;
     }
-    .row.extra-skills {
+    /* .row.extra-skills {
       display: none;
-    }
-    .row.extra-skills-invisible {
-      display: inherit;
-      width: 100%;
-      margin-left: 0;
-      display: flex;
-      align-items: center;
-    }
+    } */
+   
   }
   
   @media only screen and (max-width: 700px) {

@@ -39,8 +39,8 @@ const About = () => {
 
       <div className="row extra-skills" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         JAVA Object Oriented Programming | Data Structures and Algorithms 
-        Software Design and Architectures - SOLID, MVC | Git |
-        NPM |JIRA, SonarLint | JUnit | Jenkins
+        Software Design and Architectures - SOLID, MVC | Tools - Git, JIRA, SonarLint |
+        NPM | JUnit | Jenkins
       </div>
 
       {/* <div
@@ -64,8 +64,8 @@ const About = () => {
             I am willing to work on front-end and back-end of 
             applications. I am interested in building scalable projects,
             and managing large code bases. Currently, I am learning React and Spring Boot.
-            In my spare time I work on
-            different projects to build my skills and continue learning.
+            In my spare time I love working on
+            side projects to build my skills and continue learning.
           </p>
         </div>
       </div>
