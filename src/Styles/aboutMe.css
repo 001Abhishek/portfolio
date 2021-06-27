@@ -22,6 +22,10 @@
     justify-content: center;
     font-size: 30px;
   }
+  .about-me{
+    margin: 20px;
+    font-size: 22px;
+  }
   
   .row.back-end {
     margin-top: 90px;

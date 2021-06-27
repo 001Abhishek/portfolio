@@ -12,13 +12,15 @@ body {
 
 .intro-content h1 {
   font-size: 50px;
-  color: #d1d7e0;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e2eeec;
 }
 
 .intro-content p {
   font-size: 26px;
   margin-top: 20px;
-  color: #d1d7e0;
+  color: #e2dede;
 }
 
 .intro-content hr {
@@ -43,8 +45,9 @@ body {
 
 .home {
   /* background-color: #3d1aaf; */
- background-image: url('../images/background.jpeg');
+ background-image: url('../images/background3.jpg');
  background-size: cover;
+ opacity: 0.9;
 
   box-shadow: 0px 4px 5px -3px black;
   width: 100%;

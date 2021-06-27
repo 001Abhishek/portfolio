@@ -10,9 +10,17 @@ const About = () => {
         <h1>About Me</h1>
         <hr />
       </div>
+      <p className="about-me">My name is Abhishek Pathania and I am a Software Developer, currently living in Gujarat, India.
+          I have a Bachelor of Science in Computer Science from Gujarat Technological University. 
+           I am both driven and self-motivated, and I am constantly experimenting with new technologies and 
+           techniques. I love Java and I'm passionate about Backend 
+        Development, and strive to better 
+        myself as a developer, and the development community as a whole. In my free time,
+         I like to write blogs and read books. 
+           </p>
       <div className="row front-end" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
         <img src={FrontEndImg} id="invisible-skills-img" />
-
+        
         <ul>
           <b>FRONT-END SKILLS</b>
           <li>-> HTML / CSS </li>
