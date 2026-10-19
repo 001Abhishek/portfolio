@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abhishek Sudarshan Pathania - Resume</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #18181b;
+      background: #ffffff;
+      font-size: 9.5pt;
+      line-height: 1.4;
+    }
+    a {
+      color: #18181b;
+      text-decoration: none;
+    }
+    .header {
+      border-bottom: 1.5px solid #27272a;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .name {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #09090b;
+    }
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #3f3f46;
+      margin-top: 1px;
+    }
+    .contacts {
+      font-size: 8.5pt;
+      color: #52525b;
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .section {
+      margin-bottom: 11px;
+    }
+    .section-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #09090b;
+      border-bottom: 1px solid #e4e4e7;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .job {
+      margin-bottom: 8px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .job-role {
+      font-weight: 700;
+      color: #09090b;
+      font-size: 9.5pt;
+    }
+    .job-company {
+      font-weight: 600;
+      color: #27272a;
+    }
+    .job-date {
+      font-size: 8.5pt;
+      color: #71717a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 14px;
+      margin-top: 2px;
+    }
+    li {
+      margin-bottom: 3px;
+      color: #27272a;
+      font-size: 8.8pt;
+      line-height: 1.35;
+    }
+    li strong {
+      color: #09090b;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5px;
+      font-size: 8.5pt;
+    }
+    .skill-category {
+      display: flex;
+      gap: 4px;
+    }
+    .skill-name {
+      font-weight: 700;
+      color: #09090b;
+      min-width: 130px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 8pt;
+    }
+    .skill-detail {
+      color: #3f3f46;
+      flex: 1;
+    }
+    .project-item {
+      margin-bottom: 6px;
+    }
+    .project-title {
+      font-weight: 700;
+      color: #09090b;
+      font-size: 9pt;
+    }
+    .project-metric {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 8pt;
+      color: #047857;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .project-desc {
+      font-size: 8.5pt;
+      color: #3f3f46;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="name">Abhishek Sudarshan Pathania</div>
+    <div class="title">System Development Engineer 2 @ Amazon</div>
+    <div class="contacts">
+      <span>India</span>
+      <span>•</span>
+      <span>aprjaput321@gmail.com</span>
+      <span>•</span>
+      <span>linkedin.com/in/abhishek-s-pathania-095816137</span>
+      <span>•</span>
+      <span>github.com/001Abhishek</span>
+      <span>•</span>
+      <span>001abhishek.github.io/portfolio</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <p style="font-size: 8.8pt; color: #27272a; line-height: 1.35;">
+      System Development Engineer 2 at Amazon specializing in distributed event-driven systems on AWS. Deep expertise in high-concurrency Kotlin/Java architectures, Step Functions orchestration, bounded concurrency, single-retry ownership per failure class, zero-trust security migrations, and automated safe continuous delivery.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-role">System Development Engineer 2</span> — <span class="job-company">Amazon</span>
+        </div>
+        <div class="job-date">2021 — Present | India</div>
+      </div>
+      <ul>
+        <li><strong>Zero-Trust Identity & Storage Migration:</strong> Designed and executed phased migration to identity-bound OIDC authenticated access across ingestion fleets with server-side tenant isolation, safe retries, and bounded memory caps; achieved zero pre-production errors and eliminated silent data corruption.</li>
+        <li><strong>Serverless Fan-Out & Cold Start Optimization:</strong> Profiled and tuned JVM Lambda cold starts from 8–11s to ~1.5s (P99 latency −70%); implemented claim-check pattern on S3/SQS for large payloads and redesigned retry budgets to absorb dependency throttling without quota increases.</li>
+        <li><strong>Self-Healing Workflows & Idempotent Recovery:</strong> Instituted single-retry ownership per failure class with stall alarms for multi-day Step Functions workflows; built idempotent bulk-recovery CLI (redrive, step restart, dry-run) slashing recovery from 6–8 hours to 10–15 minutes (MTTR −70%, ~15% compute saved on EC2 Spot).</li>
+        <li><strong>Scalable Data Access & Cursor Pagination:</strong> Designed backward-compatible <code>search_after</code> cursor pagination across OpenSearch indexes with sort tie-breakers; enforced TOCTOU-safe conditional writes in DynamoDB (~65% faster lookups, zero integrity failures).</li>
+        <li><strong>Progressive Delivery & Production Safety:</strong> Established team-wide deployment standards (bake times, composite alarms, automated rollback, CodeDeploy gradual shifting, cross-account synthetic canaries); raised continuous deployment from 48% to 84% and cut production lead time from 53 to 16 days.</li>
+        <li><strong>AI & LLM Engineering:</strong> Architected engineering RAG assistant on Amazon Bedrock Knowledge Bases with intent-based model routing; elevated question resolution accuracy from ~60% to ~95% across 25+ adopted teams.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-role">Software Engineer (TCS Digital)</span> — <span class="job-company">Tata Consultancy Services</span>
+        </div>
+        <div class="job-date">June 2019 — 2021 | India</div>
+      </div>
+      <ul>
+        <li><strong>Enterprise Banking Modernization:</strong> Delivered Proof-of-Concepts (POCs) for tier-1 European banking client modernizing legacy architectures to scalable Spring Boot microservices and Liferay DXP.</li>
+        <li><strong>Data Migration Engine:</strong> Built high-concurrency batch data migration modules leveraging client REST APIs to orchestrate cross-branch user account transfers with schema reconciliation and zero data loss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Selected Systems & Architectural Case Studies</div>
+
+    <div class="project-item">
+      <span class="project-title">Zero-Trust Access to Stored Assets</span>
+      <span class="project-metric">Zero Pre-Prod Errors • Tenant Isolation</span>
+      <div class="project-desc">Replaced replayable pre-signed URLs with identity-bound OIDC auth, KMS encryption contexts, safe retries, and bounded memory caps on untrusted inputs.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-title">Serverless Event-Driven Fan-Out at Scale</span>
+      <span class="project-metric">Cold Start 8–11s → ~1.5s • P99 −70%</span>
+      <div class="project-desc">Queue fan-out with claim-check pattern for large messages, provisioned concurrency tuning, and CodeDeploy gradual traffic shifting with composite alarm rollback.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-title">Self-Healing Multi-Day Workflows & Bulk Recovery CLI</span>
+      <span class="project-metric">MTTR −70% • Recovery 6–8h → 10–15m</span>
+      <div class="project-desc">Orchestrated Step Functions with single retry owners, stall detection alarms, and an idempotent CLI for dry-run validation and state-aware bulk redrive.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-title">High-Throughput Cursor-Paginated History API</span>
+      <span class="project-metric">~65% Faster Lookups • TOCTOU-Safe</span>
+      <div class="project-desc">Backward-compatible cursor pagination contract with sort tie-breakers across multiple search indexes; conditional writes in DynamoDB for race safety.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Skills & Competencies</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <span class="skill-name">Distributed Systems:</span>
+        <span class="skill-detail">Event-driven fan-out, claim-check, jittered exponential backoff, Step Functions, token bucket rate limiters, multi-tenant OIDC isolation</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-name">AWS Cloud Platform:</span>
+        <span class="skill-detail">Lambda, ECS Fargate, EC2 Spot, SQS, SNS, Step Functions, S3, API Gateway, DynamoDB, OpenSearch, KMS, IAM, VPC PrivateLink</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-name">Languages & Core:</span>
+        <span class="skill-detail">Kotlin (primary), Java, TypeScript, Python, Smithy API models, Concurrency Control, Memory Caps, Coroutines, MockK, JUnit 5</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-name">AI & LLM Engineering:</span>
+        <span class="skill-detail">Amazon Bedrock Knowledge Bases (RAG), Converse API, Intent Classification, Structured Outputs, Strands Agents, MCP Servers</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-name">DevOps & Delivery:</span>
+        <span class="skill-detail">AWS CDK (TypeScript), CloudFormation, CodeDeploy Gradual Shifting, Composite Alarms, Synthetic Canaries, Docker, Primary On-Call</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="job-header">
+      <div>
+        <span class="job-role">Bachelor of Science in Computer Science & Engineering</span> — <span class="job-company">Gujarat Technological University</span>
+      </div>
+      <div class="job-date">2015 — 2019 | India</div>
+    </div>
+  </div>
+
+</body>
+</html>
