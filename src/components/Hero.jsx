@@ -33,10 +33,20 @@ export default function Hero() {
           Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-400">{personalInfo.name}</span>
         </h1>
 
-        {/* Hero Description */}
-        <p className="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-light">
-          {personalInfo.shortBio} Specializing in <span className="text-white font-medium">Java</span>, <span className="text-white font-medium">Spring Boot</span>, <span className="text-white font-medium">React</span>, and <span className="text-white font-medium">enterprise cloud integrations</span>.
+        {/* Hero Headline */}
+        <p className="max-w-3xl mx-auto text-xl sm:text-2xl text-indigo-200 font-medium mb-4 leading-relaxed">
+          {personalInfo.headline}
         </p>
+
+        {/* Tech Stack Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto mb-10 text-xs sm:text-sm font-mono text-slate-300">
+          <span className="px-3 py-1 rounded-lg bg-indigo-950/70 border border-indigo-500/30 text-indigo-300 font-semibold">Kotlin (primary)</span>
+          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">Java</span>
+          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">TypeScript</span>
+          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">Python</span>
+          <span className="px-3 py-1 rounded-lg bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 font-semibold">AWS Serverless & Event-Driven</span>
+          <span className="px-3 py-1 rounded-lg bg-purple-950/70 border border-purple-500/30 text-purple-300 font-semibold">Amazon Bedrock & RAG</span>
+        </div>
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
@@ -45,16 +55,16 @@ export default function Hero() {
             onClick={(e) => scrollTo(e, '#projects')}
             className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all transform hover:-translate-y-0.5"
           >
-            <span>View Projects</span>
+            <span>Selected Projects</span>
             <ArrowRight className="w-4 h-4" />
           </a>
 
           <a
-            href="#contact"
-            onClick={(e) => scrollTo(e, '#contact')}
+            href="#skills"
+            onClick={(e) => scrollTo(e, '#skills')}
             className="flex items-center gap-2 px-6 py-3.5 rounded-xl glass-panel border border-slate-700/80 hover:border-indigo-500/50 text-slate-200 hover:text-white font-semibold transition-all transform hover:-translate-y-0.5"
           >
-            <span>Contact Me</span>
+            <span>Skills & Competencies</span>
           </a>
 
           <a
@@ -96,42 +106,42 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Highlights Grid */}
+        {/* Real Metrics Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-indigo-400 mb-1">
               <Server className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Current Role</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Cold Starts</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Amazon SDE 2</div>
-            <div className="text-xs text-slate-400 mt-1">India Development Center</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">8–11s → ~1.5s</div>
+            <div className="text-xs text-slate-400 mt-1">P99 latency -70%</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-cyan-400 mb-1">
               <Code2 className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Architecture</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Bulk Recovery</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Distributed</div>
-            <div className="text-xs text-slate-400 mt-1">High-Throughput Systems</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">6–8h → 10–15m</div>
+            <div className="text-xs text-slate-400 mt-1">MTTR -70%, zero duplicates</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-purple-400 mb-1">
               <Cpu className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Tech Stack</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Continuous Delivery</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Java & AWS</div>
-            <div className="text-xs text-slate-400 mt-1">Microservices & AI Backends</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">48% → 84% CD</div>
+            <div className="text-xs text-slate-400 mt-1">Auto-rollback & canaries</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Sparkles className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Focus</span>
+              <span className="text-xs font-mono uppercase tracking-wider">AI Accuracy</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Security & Scale</div>
-            <div className="text-xs text-slate-400 mt-1">Zero-Downtime Migrations</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">~60% → ~95%</div>
+            <div className="text-xs text-slate-400 mt-1">Bedrock RAG, 25+ teams</div>
           </div>
         </div>
       </div>
