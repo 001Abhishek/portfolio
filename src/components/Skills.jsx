@@ -1,110 +1,65 @@
 import React from 'react';
-import { 
-  Server, 
-  Cpu, 
-  Layout, 
-  Database, 
-  Wrench, 
-  Bot, 
-  ShieldCheck, 
-  CheckCircle2 
-} from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Skills() {
   const { skillCategories } = portfolioData;
 
-  const getCategoryIcon = (category) => {
-    switch (category) {
-      case 'Distributed Systems & Cloud':
-        return <Server className="w-5 h-5 text-indigo-400" />;
-      case 'Backend & Core Engineering':
-        return <Cpu className="w-5 h-5 text-cyan-400" />;
-      case 'AI & LLM Engineering':
-        return <Bot className="w-5 h-5 text-purple-400" />;
-      case 'Databases & Search':
-        return <Database className="w-5 h-5 text-emerald-400" />;
-      case 'DevOps, CI/CD & Observability':
-        return <Wrench className="w-5 h-5 text-amber-400" />;
-      case 'Frontend & Web':
-        return <Layout className="w-5 h-5 text-pink-400" />;
-      default:
-        return <Cpu className="w-5 h-5 text-indigo-400" />;
-    }
-  };
-
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-indigo-500/20 text-indigo-400 text-xs font-mono uppercase tracking-wider mb-4">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>Technical Capabilities</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
-            Skills & Competencies
-          </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            Engineering depth across high-scale distributed systems, resilient AWS primitives, typed backends, and reliable production LLM pipelines.
-          </p>
+    <section id="skills" className="space-y-8">
+      {/* Section Header */}
+      <div>
+        <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
+          Technical Depth
         </div>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
+          Skills & Competencies
+        </h2>
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-2xl font-light">
+          Architectural paradigms, AWS services, backend concurrency controls, and operational patterns applied in production.
+        </p>
+      </div>
 
-        {/* 6 Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {skillCategories.map((group, idx) => (
-            <div
-              key={idx}
-              className="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 glow-card flex flex-col justify-between"
-            >
-              <div>
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800">
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex-shrink-0">
-                    {getCategoryIcon(group.category)}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white">
-                      {group.category}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-xs text-slate-400 mb-4 font-light leading-relaxed">
+      {/* Grid of categories */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skillCategories.map((group, idx) => (
+          <div
+            key={idx}
+            className="p-6 rounded-xl card-surface card-hover flex flex-col justify-between space-y-4"
+          >
+            <div>
+              <div className="border-b border-zinc-100 dark:border-zinc-800 pb-3 mb-4">
+                <h3 className="text-base font-bold text-zinc-950 dark:text-zinc-50 tracking-tight">
+                  {group.category}
+                </h3>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-light">
                   {group.summary}
                 </p>
+              </div>
 
-                {/* Specific Detailed Competencies */}
-                <div className="space-y-3.5">
-                  {group.skills.map((skill, sIdx) => (
-                    <div key={sIdx} className="text-xs">
-                      <div className="font-semibold text-slate-200 mb-0.5 flex items-start gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-1.5 flex-shrink-0"></span>
-                        <span className="text-indigo-300 font-medium">{skill.name}</span>
-                      </div>
-                      <p className="text-slate-400 leading-relaxed pl-3 font-light">
-                        {skill.detail}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="space-y-3.5">
+                {group.skills.map((skill, sIdx) => (
+                  <div key={sIdx} className="text-xs">
+                    <span className="font-mono font-medium text-zinc-900 dark:text-zinc-200">
+                      {skill.name}:
+                    </span>{' '}
+                    <span className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                      {skill.detail}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Engineering Philosophy Banner */}
-        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-slate-900 to-cyan-950/40 text-center">
-          <div className="flex items-center justify-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider mb-2">
-            <ShieldCheck className="w-4 h-4" />
-            <span>Operational & Architectural Philosophy</span>
           </div>
-          <h4 className="text-lg sm:text-xl font-bold text-white mb-2">
-            One Retry Owner Per Failure Class • Bounded Concurrency • Fail-Closed Evaluations • Progressive Safe Rollouts
-          </h4>
-          <p className="max-w-2xl mx-auto text-slate-400 text-xs sm:text-sm font-light">
-            Building systems that fail gracefully, recover automatically, and keep human on-call fatigue to an absolute minimum.
-          </p>
+        ))}
+      </div>
+
+      {/* Philosophy Callout */}
+      <div className="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30">
+        <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1">
+          Operational Principles
+        </div>
+        <div className="text-sm font-medium text-zinc-900 dark:text-zinc-200">
+          One retry owner per failure class • Bounded concurrency & memory caps • Fail-closed evaluations • Gradual traffic shifting with auto-rollback
         </div>
       </div>
     </section>

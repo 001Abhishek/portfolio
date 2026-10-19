@@ -6,43 +6,27 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-zinc-200 dark:selection:text-zinc-900;
+  }
 }
 
-/* Custom Glassmorphism, animations and glow utilities */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Crisp neutral card surfaces */
+.card-surface {
+  @apply bg-white border border-zinc-200 shadow-sm dark:bg-zinc-900/60 dark:border-zinc-800/80 dark:shadow-none;
 }
 
-.light .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.card-hover {
+  @apply transition-all duration-200 hover:border-zinc-400 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-none;
 }
 
-.glow-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Subtle dot grid for technical texture, responsive to light & dark */
+.bg-tech-grid {
+  background-size: 28px 28px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
 }
 
-.glow-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(99, 102, 241, 0.35);
-  border-color: rgba(99, 102, 241, 0.5);
-}
-
-/* Background grid effect */
-.bg-grid-pattern {
-  background-size: 36px 36px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-}
-
-.light .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+.dark .bg-tech-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }

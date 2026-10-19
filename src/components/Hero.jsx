@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail, FileDown, Sparkles, Code2, Server, Cpu } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, FileDown, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero() {
@@ -12,137 +12,98 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
-      {/* Background glowing gradients & blur orbs */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="hero" className="pt-8 pb-4">
+      {/* Role tag */}
+      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/80 mb-6">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <span>{personalInfo.role} @ {personalInfo.currentCompany}</span>
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-medium mb-8 hover:border-indigo-400/50 transition-colors">
-          <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-          </span>
-          <span>{personalInfo.role} @ {personalInfo.currentCompany}</span>
+      {/* Main Title */}
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6 leading-tight max-w-4xl">
+        I build and run distributed, event-driven systems on AWS.
+      </h1>
+
+      {/* Direct, authentic description */}
+      <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-3xl mb-8">
+        System Development Engineer 2 at Amazon (India Development Center). Focused on architectural simplicity, bounded concurrency, single-owner failure recovery, and safe progressive deployment.
+      </p>
+
+      {/* Primary Links & Actions */}
+      <div className="flex flex-wrap items-center gap-3 mb-12">
+        <a
+          href="#projects"
+          onClick={(e) => scrollTo(e, '#projects')}
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-mono font-medium hover:bg-zinc-800 dark:hover:bg-white transition-colors"
+        >
+          <span>Selected Projects</span>
+          <ArrowDown className="w-3.5 h-3.5" />
+        </a>
+
+        <a
+          href={personalInfo.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-mono transition-colors"
+        >
+          <Github className="w-3.5 h-3.5" />
+          <span>GitHub</span>
+          <ArrowUpRight className="w-3 h-3 opacity-60" />
+        </a>
+
+        <a
+          href={personalInfo.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-mono transition-colors"
+        >
+          <Linkedin className="w-3.5 h-3.5" />
+          <span>LinkedIn</span>
+          <ArrowUpRight className="w-3 h-3 opacity-60" />
+        </a>
+
+        <a
+          href={`mailto:${personalInfo.email}`}
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-mono transition-colors"
+        >
+          <Mail className="w-3.5 h-3.5" />
+          <span>Email</span>
+        </a>
+
+        <a
+          href={personalInfo.resumeUrl}
+          download="AbhishekResume.pdf"
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-mono transition-colors"
+        >
+          <FileDown className="w-3.5 h-3.5" />
+          <span>Resume PDF</span>
+        </a>
+      </div>
+
+      {/* Metrics Row - Crisp minimalist border cards */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+        <div className="p-4 rounded-xl card-surface">
+          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Cold Starts</div>
+          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">8–11s → ~1.5s</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">P99 latency −70%</div>
         </div>
 
-        {/* Hero Title */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-400">{personalInfo.name}</span>
-        </h1>
-
-        {/* Hero Headline */}
-        <p className="max-w-3xl mx-auto text-xl sm:text-2xl text-indigo-200 font-medium mb-4 leading-relaxed">
-          {personalInfo.headline}
-        </p>
-
-        {/* Tech Stack Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto mb-10 text-xs sm:text-sm font-mono text-slate-300">
-          <span className="px-3 py-1 rounded-lg bg-indigo-950/70 border border-indigo-500/30 text-indigo-300 font-semibold">Kotlin (primary)</span>
-          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">Java</span>
-          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">TypeScript</span>
-          <span className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/60">Python</span>
-          <span className="px-3 py-1 rounded-lg bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 font-semibold">AWS Serverless & Event-Driven</span>
-          <span className="px-3 py-1 rounded-lg bg-purple-950/70 border border-purple-500/30 text-purple-300 font-semibold">Amazon Bedrock & RAG</span>
+        <div className="p-4 rounded-xl card-surface">
+          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Bulk Recovery</div>
+          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">6–8h → 10–15m</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">MTTR −70%, zero dupes</div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
-          <a
-            href="#projects"
-            onClick={(e) => scrollTo(e, '#projects')}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all transform hover:-translate-y-0.5"
-          >
-            <span>Selected Projects</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-
-          <a
-            href="#skills"
-            onClick={(e) => scrollTo(e, '#skills')}
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl glass-panel border border-slate-700/80 hover:border-indigo-500/50 text-slate-200 hover:text-white font-semibold transition-all transform hover:-translate-y-0.5"
-          >
-            <span>Skills & Competencies</span>
-          </a>
-
-          <a
-            href={personalInfo.resumeUrl}
-            download="AbhishekResume.pdf"
-            className="flex items-center gap-2 px-5 py-3.5 rounded-xl glass-panel border border-slate-700/80 hover:border-indigo-500/50 text-indigo-300 hover:text-indigo-200 font-semibold transition-all transform hover:-translate-y-0.5"
-          >
-            <FileDown className="w-4 h-4 text-indigo-400" />
-            <span>Resume</span>
-          </a>
+        <div className="p-4 rounded-xl card-surface">
+          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Safe Continuous Delivery</div>
+          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">48% → 84% CD</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">Auto-rollback & canaries</div>
         </div>
 
-        {/* Social Icons Bar */}
-        <div className="flex items-center justify-center gap-4 mb-16 text-slate-400">
-          <a
-            href={personalInfo.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-xl glass-panel hover:text-white hover:border-indigo-500/50 hover:bg-slate-800/80 transition-all hover:-translate-y-1"
-            title="GitHub Profile"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <a
-            href={personalInfo.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-xl glass-panel hover:text-indigo-400 hover:border-indigo-500/50 hover:bg-slate-800/80 transition-all hover:-translate-y-1"
-            title="LinkedIn Profile"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="p-3 rounded-xl glass-panel hover:text-cyan-400 hover:border-indigo-500/50 hover:bg-slate-800/80 transition-all hover:-translate-y-1"
-            title="Email Abhishek"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
-        </div>
-
-        {/* Real Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
-            <div className="flex items-center gap-2 text-indigo-400 mb-1">
-              <Server className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Cold Starts</span>
-            </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">8–11s → ~1.5s</div>
-            <div className="text-xs text-slate-400 mt-1">P99 latency -70%</div>
-          </div>
-
-          <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
-            <div className="flex items-center gap-2 text-cyan-400 mb-1">
-              <Code2 className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Bulk Recovery</span>
-            </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">6–8h → 10–15m</div>
-            <div className="text-xs text-slate-400 mt-1">MTTR -70%, zero duplicates</div>
-          </div>
-
-          <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
-            <div className="flex items-center gap-2 text-purple-400 mb-1">
-              <Cpu className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Continuous Delivery</span>
-            </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">48% → 84% CD</div>
-            <div className="text-xs text-slate-400 mt-1">Auto-rollback & canaries</div>
-          </div>
-
-          <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
-            <div className="flex items-center gap-2 text-emerald-400 mb-1">
-              <Sparkles className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">AI Accuracy</span>
-            </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">~60% → ~95%</div>
-            <div className="text-xs text-slate-400 mt-1">Bedrock RAG, 25+ teams</div>
-          </div>
+        <div className="p-4 rounded-xl card-surface">
+          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Bedrock RAG Accuracy</div>
+          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">~60% → ~95%</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">Intent-routed, 25+ teams</div>
         </div>
       </div>
     </section>
