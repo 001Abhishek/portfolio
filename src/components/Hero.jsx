@@ -101,37 +101,37 @@ export default function Hero() {
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-indigo-400 mb-1">
               <Server className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Experience</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Current Role</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">5+ Years</div>
-            <div className="text-xs text-slate-400 mt-1">Enterprise Software Dev</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">Amazon SDE 2</div>
+            <div className="text-xs text-slate-400 mt-1">India Development Center</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-cyan-400 mb-1">
               <Code2 className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Primary Stack</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Architecture</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Java & Spring</div>
-            <div className="text-xs text-slate-400 mt-1">APIs, Microservices, SQL</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">Distributed</div>
+            <div className="text-xs text-slate-400 mt-1">High-Throughput Systems</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-purple-400 mb-1">
               <Cpu className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Frontend</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Tech Stack</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">React & JS</div>
-            <div className="text-xs text-slate-400 mt-1">Modern Responsive UIs</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">Java & AWS</div>
+            <div className="text-xs text-slate-400 mt-1">Microservices & AI Backends</div>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-slate-800 text-left hover:border-indigo-500/30 transition-colors">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Sparkles className="w-4 h-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Domain</span>
+              <span className="text-xs font-mono uppercase tracking-wider">Focus</span>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-white">Banking & Retail</div>
-            <div className="text-xs text-slate-400 mt-1">Global Tier-1 Clients</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">Security & Scale</div>
+            <div className="text-xs text-slate-400 mt-1">Zero-Downtime Migrations</div>
           </div>
         </div>
       </div>

@@ -1,41 +1,56 @@
 export const portfolioData = {
   personalInfo: {
     name: "Abhishek Sudarshan Pathania",
-    role: "Software Engineer & Full-Stack Developer",
-    currentCompany: "Tata Consultancy Services",
-    location: "Gujarat, India",
+    role: "System Development Engineer 2 (SDE 2)",
+    currentCompany: "Amazon",
+    location: "India",
     email: "aprjaput321@gmail.com",
     github: "https://github.com/001Abhishek",
     linkedin: "https://www.linkedin.com/in/abhishek-s-pathania-095816137/",
     youtube: "https://www.youtube.com/channel/UCpud0pGbrDLfA3g5CnmjYcA/featured",
     resumeUrl: "./AbhishekResume.pdf",
-    shortBio: "Software Developer passionate about crafting resilient backend architectures, scalable APIs, and modern responsive web applications.",
+    shortBio: "System Development Engineer 2 @ Amazon specializing in large-scale distributed systems, mission-critical security migrations, AI-powered backend systems, and cloud-native architectures.",
     aboutBio: [
-      "I am a driven and self-motivated Software Developer with a Bachelor of Science in Computer Science from Gujarat Technological University. Currently contributing to mission-critical enterprise systems at Tata Consultancy Services.",
-      "With a strong foundation in Java, Spring Boot, and modern web technologies, I love designing clean RESTful services, streamlining database transactions, and exploring modern cloud patterns. I continuously strive to elevate my craft, adhere to clean code principles (SOLID, MVC), and share knowledge with the developer community.",
-      "In my free time, I enjoy developing side projects, experimenting with emerging tech stacks, writing technical blogs, and reading."
+      "I am a System Development Engineer 2 (SDE 2) at Amazon (Amazon India Development Center) with a strong foundation in Computer Science Engineering from Gujarat Technological University.",
+      "At Amazon, I focus on engineering resilient distributed systems, driving critical infrastructure and security migrations, and architecting AI-powered backend workflows capable of operating seamlessly at massive global scale.",
+      "Prior to Amazon, I contributed to enterprise banking POCs and high-throughput data migration microservices at Tata Consultancy Services (TCS Digital). I am passionate about system design, performance profiling, clean code architecture (SOLID, MVC), and sharing insights across the engineering community."
     ],
     education: {
-      degree: "Bachelor of Science in Computer Science",
+      degree: "Bachelor of Science in Computer Science & Engineering",
       institution: "Gujarat Technological University",
       period: "2015 — 2019",
-      description: "Focused on Object-Oriented Programming, Data Structures & Algorithms, Database Management Systems, and Software Engineering."
+      description: "Focused on Distributed Systems, Algorithms, Data Structures, Relational Database Management, and Object-Oriented Architecture."
     }
   },
 
   experience: [
     {
-      id: "tcs",
-      company: "Tata Consultancy Services",
-      role: "Software Engineer",
-      period: "June 2019 — Present",
+      id: "amazon",
+      company: "Amazon",
+      role: "System Development Engineer 2 (SDE 2)",
+      period: "2021 — Present",
       location: "India",
       badge: "Current Role",
       highlights: [
-        "Architected and delivered Proof-of-Concepts (POCs) for a tier-1 European banking client migrating legacy architectures to Liferay DXP & modern Spring service layers.",
+        "Architecting and optimizing large-scale distributed systems and high-throughput backend services powering mission-critical workflows at Amazon.",
+        "Leading critical enterprise-grade security migrations and infrastructure modernization initiatives with zero operational downtime.",
+        "Designing and integrating AI-driven backend automation pipelines and operational intelligence systems.",
+        "Championing operational excellence, rigorous code reviews, automated CI/CD deployments, and high-availability design patterns across distributed teams."
+      ],
+      skills: ["Distributed Systems", "Java", "AWS", "Microservices Architecture", "System Design", "Cloud Infrastructure", "Security Migrations", "AI Automation"]
+    },
+    {
+      id: "tcs",
+      company: "Tata Consultancy Services",
+      role: "Software Engineer (TCS Digital)",
+      period: "June 2019 — 2021",
+      location: "India",
+      badge: "Previous Role",
+      highlights: [
+        "Architected and delivered Proof-of-Concepts (POCs) for a tier-1 European banking client migrating legacy architectures to modern Spring service layers and Liferay DXP.",
         "Engineered custom enterprise modules enabling secure, automated batch data migration across branches by orchestrating client RESTful APIs.",
         "Collaborated with cross-functional stakeholders to formulate structural API enhancements, increasing throughput and minimizing latency.",
-        "Implemented reactive UI templates utilizing JSON structures and FTL templates, combining Liferay validators and custom JavaScript for frictionless user interactions."
+        "Implemented reactive UI templates utilizing JSON structures and FTL templates, combining validators and custom JavaScript for frictionless user interactions."
       ],
       skills: ["Java/J2EE", "Spring Boot", "Liferay 7.2 DXP", "RESTful APIs", "SQL", "JavaScript", "FTL", "JSON", "JSP"]
     },
@@ -49,10 +64,9 @@ export const portfolioData = {
       highlights: [
         "Contributed to full-stack development of a web portal compensating users for product and software reviews.",
         "Constructed modular controller and database query pipelines using PHP CodeIgniter and MySQL.",
-        "Developed responsive user interfaces with HTML5, CSS3, JavaScript, Bootstrap, and XML.",
-        "Earned high commendations from executive leadership and lead architects for code quality and turnaround speed."
+        "Developed responsive user interfaces with HTML5, CSS3, JavaScript, Bootstrap, and XML."
       ],
-      skills: ["PHP", "CodeIgniter", "MySQL", "JavaScript", "Bootstrap", "HTML/CSS", "XML"]
+      skills: ["PHP", "CodeIgniter", "MySQL", "JavaScript", "Bootstrap", "HTML/CSS"]
     }
   ],
 
@@ -91,14 +105,24 @@ export const portfolioData = {
 
   skillCategories: [
     {
+      category: "Distributed Systems & Cloud",
+      skills: [
+        { name: "Distributed Systems", level: "Advanced" },
+        { name: "AWS Cloud", level: "Advanced" },
+        { name: "System Design", level: "Advanced" },
+        { name: "Microservices", level: "Advanced" },
+        { name: "Security Migrations", level: "Advanced" },
+        { name: "AI Backend Automation", level: "Proficient" }
+      ]
+    },
+    {
       category: "Backend & Core",
       skills: [
-        { name: "Java (OOP)", level: "Advanced" },
+        { name: "Java (OOP)", level: "Expert" },
         { name: "Spring Boot", level: "Advanced" },
         { name: "RESTful APIs", level: "Advanced" },
-        { name: "Microservices", level: "Intermediate" },
-        { name: "Data Structures & Algorithms", level: "Proficient" },
-        { name: "Node.js / Express", level: "Intermediate" },
+        { name: "Data Structures & Algorithms", level: "Advanced" },
+        { name: "Node.js / Express", level: "Proficient" },
         { name: "Hibernate / JPA", level: "Proficient" }
       ]
     },
@@ -114,26 +138,14 @@ export const portfolioData = {
       ]
     },
     {
-      category: "Databases & Storage",
+      category: "Databases, DevOps & Tools",
       skills: [
-        { name: "MySQL", level: "Advanced" },
-        { name: "PostgreSQL", level: "Proficient" },
-        { name: "MongoDB", level: "Intermediate" },
-        { name: "Query Optimization", level: "Proficient" },
-        { name: "Database Schema Design", level: "Advanced" }
-      ]
-    },
-    {
-      category: "DevOps, Tools & Methods",
-      skills: [
-        { name: "Git & GitHub", level: "Advanced" },
-        { name: "GitHub Actions (CI/CD)", level: "Proficient" },
-        { name: "Docker", level: "Intermediate" },
-        { name: "Jenkins", level: "Intermediate" },
-        { name: "JUnit / Mockito", level: "Proficient" },
-        { name: "SOLID & Design Patterns", level: "Advanced" },
-        { name: "JIRA & Agile", level: "Advanced" },
-        { name: "SonarLint", level: "Proficient" }
+        { name: "MySQL / PostgreSQL", level: "Advanced" },
+        { name: "DynamoDB / NoSQL", level: "Proficient" },
+        { name: "Git & GitHub Actions", level: "Advanced" },
+        { name: "Docker & Containers", level: "Proficient" },
+        { name: "CI/CD & Operational Excellence", level: "Advanced" },
+        { name: "SOLID & Design Patterns", level: "Expert" }
       ]
     }
   ]
