@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
+import ArchitectureVisualizer from './ArchitectureVisualizer';
+import InteractiveCli from './InteractiveCli';
+import ContractViewer from './ContractViewer';
 
 export default function Projects() {
   const { projects, alsoBuilt } = portfolioData;
@@ -19,17 +22,17 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="space-y-8">
+    <section id="projects" className="space-y-10">
       {/* Section Header */}
       <div>
         <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
-          Architecture & Scale
+          Architecture, Scale & Failure Recovery
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           Selected Projects
         </h2>
         <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-2xl font-light">
-          Production systems engineered for high throughput, predictable failure domains, and safe continuous deployment on AWS.
+          Production systems engineered for bounded concurrency, high throughput, zero-trust security, and safe progressive deployment on AWS.
         </p>
       </div>
 
@@ -50,75 +53,95 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Main Projects List / Cards */}
-      <div className="space-y-6">
+      {/* Flagship Projects List with Interactive Modules */}
+      <div className="space-y-10">
         {filteredProjects.map((project, idx) => (
-          <article
-            key={project.id}
-            className="p-6 sm:p-8 rounded-xl card-surface card-hover space-y-5"
-          >
-            {/* Title & Metric Highlight */}
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800/60 pb-4">
-              <div>
-                <span className="text-xs font-mono text-zinc-400 dark:text-zinc-500 mr-2">0{idx + 1}.</span>
-                <h3 className="inline text-lg sm:text-xl font-bold text-zinc-950 dark:text-zinc-50 tracking-tight">
-                  {project.title}
-                </h3>
-              </div>
-              <span className="inline-flex self-start sm:self-auto px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700">
-                {project.metricHighlight}
-              </span>
-            </div>
-
-            {/* Problem */}
-            <div className="text-sm">
-              <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block mb-1">
-                Problem
-              </span>
-              <p className="text-zinc-700 dark:text-zinc-300 font-light leading-relaxed">
-                {project.problem}
-              </p>
-            </div>
-
-            {/* Role & Solution */}
-            <div className="text-sm">
-              <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block mb-1">
-                Role & Architecture
-              </span>
-              <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">
-                {project.role}
-              </p>
-            </div>
-
-            {/* Impact */}
-            <div className="text-sm">
-              <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block mb-1">
-                Impact
-              </span>
-              <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed font-light">
-                {project.impact}
-              </p>
-            </div>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-1.5 pt-2">
-              {project.tags.map((tag, tIdx) => (
-                <span
-                  key={tIdx}
-                  className="px-2 py-0.5 text-[11px] font-mono rounded bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/80 dark:border-zinc-700/60"
-                >
-                  {tag}
+          <div key={project.id} className="space-y-4">
+            <article className="p-6 sm:p-8 rounded-xl card-surface card-hover space-y-5">
+              {/* Title & Metric Highlight */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800/60 pb-4">
+                <div>
+                  <span className="text-xs font-mono text-zinc-400 dark:text-zinc-500 mr-2">0{idx + 1}.</span>
+                  <h3 className="inline text-lg sm:text-xl font-bold text-zinc-950 dark:text-zinc-50 tracking-tight">
+                    {project.title}
+                  </h3>
+                </div>
+                <span className="inline-flex self-start sm:self-auto px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700">
+                  {project.metricHighlight}
                 </span>
-              ))}
-            </div>
-          </article>
+              </div>
+
+              {/* Problem */}
+              <div className="text-sm">
+                <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block mb-1">
+                  Problem
+                </span>
+                <p className="text-zinc-700 dark:text-zinc-300 font-light leading-relaxed">
+                  {project.problem}
+                </p>
+              </div>
+
+              {/* Role & Solution */}
+              <div className="text-sm">
+                <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block mb-1">
+                  Role & Architecture
+                </span>
+                <p className="text-zinc-800 dark:text-zinc-200 leading-relaxed">
+                  {project.role}
+                </p>
+              </div>
+
+              {/* Impact */}
+              <div className="text-sm">
+                <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block mb-1">
+                  Impact
+                </span>
+                <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed font-light">
+                  {project.impact}
+                </p>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {project.tags.map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="px-2 py-0.5 text-[11px] font-mono rounded bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/80 dark:border-zinc-700/60"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+
+            {/* Embedded Interactive Architecture Visualizer for Serverless Fan-Out */}
+            {project.id === 'serverless-fanout' && (
+              <div className="pt-1">
+                <ArchitectureVisualizer />
+              </div>
+            )}
+
+            {/* Embedded Interactive CLI for Self-Healing Workflows */}
+            {project.id === 'self-healing-workflows' && (
+              <div className="pt-1">
+                <InteractiveCli />
+              </div>
+            )}
+
+            {/* Embedded Contract Viewer for Scalable Data Access */}
+            {project.id === 'scalable-data-access' && (
+              <div className="pt-1">
+                <ContractViewer />
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
       {/* Also Built */}
-      <div className="pt-8">
+      <div className="pt-8 border-t border-zinc-200 dark:border-zinc-800">
         <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
-          Additional Initiatives
+          High-Impact Initiatives
         </div>
         <h3 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mb-4">
           Also Built
