@@ -72,34 +72,96 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "portfolio",
-      title: "Modern Developer Portfolio",
-      description: "High-performance, responsive personal portfolio built with React 18, Vite, and Tailwind CSS. Features glassmorphism UI, theme toggle, modular data structure, and automated GitHub Pages CI/CD.",
-      image: "./images/portfolio.png",
-      tags: ["React", "Vite", "Tailwind CSS", "GitHub Actions", "CI/CD"],
-      githubUrl: "https://github.com/001Abhishek/portfolio",
-      liveUrl: "https://001abhishek.github.io/portfolio/",
-      featured: true
+      id: "sec-migration",
+      title: "Distributed Security & Fleet Migration Platform",
+      category: "Distributed Systems",
+      context: "Amazon Production Fleet & Infrastructure",
+      badge: "Scale: Millions of RPS",
+      metricHighlight: "Zero Downtime Migration",
+      description: "Engineered and executed large-scale zero-downtime security authorization migrations across high-concurrency multi-region distributed services.",
+      challenge: "Modernizing core authorization frameworks across mission-critical production fleets without causing latency spikes, service degradation, or customer disruption.",
+      architectureHighlights: [
+        "Designed multi-phase canary rollout mechanisms with automated health-check telemetry and instantaneous automated rollbacks.",
+        "Constructed high-throughput token validation and permission caching pipelines supporting millions of requests per second.",
+        "Implemented circuit breakers, exponential backoff with jitter, and adaptive rate limiters to safeguard against thundering-herd cascades."
+      ],
+      impactMetrics: [
+        { label: "Availability", value: "99.999%" },
+        { label: "Customer Impact", value: "Zero Downtime" },
+        { label: "Throughput", value: "Millions RPS" },
+        { label: "Scope", value: "Multi-Region" }
+      ],
+      tags: ["Distributed Systems", "AWS (Lambda, ECS, DynamoDB)", "Java", "IAM Security", "CloudWatch", "Microservices"],
+      type: "Production Architecture"
     },
     {
-      id: "covid-tracker",
-      title: "Covid-19 Global Tracker",
-      description: "Comprehensive data dashboard tracking real-time COVID-19 pandemic statistics across countries. Provides dynamic charts and metrics for active, recovered, and deceased cases.",
-      image: "./images/covid.png",
-      tags: ["React", "Chart.js", "REST APIs", "Bootstrap", "Data Viz"],
-      githubUrl: "https://github.com/001Abhishek/covid_tracker",
-      liveUrl: "https://github.com/001Abhishek/covid_tracker",
-      featured: true
+      id: "ai-telemetry",
+      title: "AI-Driven Telemetry & Automated Self-Healing Engine",
+      category: "Cloud & Infrastructure",
+      context: "Operational Intelligence & Reliability @ Amazon",
+      badge: "AI & Stream Processing",
+      metricHighlight: "40%+ MTTR Reduction",
+      description: "Architected an intelligent telemetry analytics pipeline that evaluates streaming service health signals and automates production operational mitigations.",
+      challenge: "Diagnosing complex distributed microservice failures rapidly across massive telemetry volumes and reducing operator alert fatigue.",
+      architectureHighlights: [
+        "Engineered real-time stream ingestion pipelines processing high-velocity metric and log streams to detect statistical anomalies.",
+        "Integrated AI/ML-assisted root-cause diagnosis that correlates latency anomalies with upstream dependencies and fleet deployments.",
+        "Developed automated remediation runners capable of mitigating common fault patterns autonomously, slashing human intervention time."
+      ],
+      impactMetrics: [
+        { label: "MTTR Reduction", value: "40%+" },
+        { label: "Event Pipeline", value: "Real-Time Streaming" },
+        { label: "Resolution", value: "Autonomous Mitigation" },
+        { label: "Telemetry", value: "Distributed Logs & Metrics" }
+      ],
+      tags: ["AWS EventBridge", "Kinesis / SQS", "Python & Java", "AI/ML Diagnostics", "CloudWatch", "Distributed Tracing"],
+      type: "Production Architecture"
     },
     {
-      id: "quotes-generator",
-      title: "Dynamic Quotes Generator",
-      description: "Web application generating curated inspirational quotes on demand with one-click social sharing, clipboard integration, and fluid transitions.",
-      image: "./images/quotes.png",
-      tags: ["JavaScript", "HTML5/CSS3", "Web APIs", "Responsive UI"],
-      githubUrl: "https://github.com/001Abhishek/quotes_generator",
-      liveUrl: "https://github.com/001Abhishek/quotes_generator",
-      featured: true
+      id: "data-migration-engine",
+      title: "High-Throughput Branch Data Migration & Reconciliation Engine",
+      category: "Enterprise Systems",
+      context: "Enterprise Retail Platform @ TCS",
+      badge: "High-Concurrency Batch Pipeline",
+      metricHighlight: "100% Data Fidelity",
+      description: "Developed an asynchronous distributed data orchestration pipeline migrating multi-tenant user accounts and stateful records between branch nodes.",
+      challenge: "Safely orchestrating massive data migration across disparate branch networks with strict relational consistency and strict rate quotas.",
+      architectureHighlights: [
+        "Engineered an idempotent batch processing worker cluster leveraging client RESTful APIs with adaptive backpressure control.",
+        "Created an automated schema mapping and checksum reconciliation engine guaranteeing zero data loss or discrepancy.",
+        "Implemented dead-letter retry queues with compensation transactions to handle transient network partitions gracefully."
+      ],
+      impactMetrics: [
+        { label: "Data Integrity", value: "100% Fidelity" },
+        { label: "Data Loss", value: "Zero Records Lost" },
+        { label: "Architecture", value: "Idempotent Batching" },
+        { label: "Concurrency", value: "Adaptive Rate Throttling" }
+      ],
+      tags: ["Java", "Spring Boot", "RESTful APIs", "SQL Optimization", "Batch Processing", "Redis", "JMS"],
+      type: "Enterprise System"
+    },
+    {
+      id: "banking-dxp",
+      title: "Core Banking Modernization & Service Architecture",
+      category: "Enterprise Systems",
+      context: "Tier-1 European Banking Portal @ TCS",
+      badge: "Enterprise Modernization",
+      metricHighlight: "35% Latency Improvement",
+      description: "Architected modern microservice layers and dynamic presentation tiers for a European tier-1 bank migrating from legacy monoliths.",
+      challenge: "Deconstructing brittle monolithic architectures into scalable, secure services complying with rigorous European banking standards.",
+      architectureHighlights: [
+        "Designed RESTful service gateways abstracting legacy core banking systems to deliver unified, high-speed API endpoints.",
+        "Engineered dynamic UI templates utilizing JSON structures and FTL with multi-tier validation, cutting submission round-trips.",
+        "Integrated financial-grade OAuth access policies and distributed caching layers to guarantee sub-second account summary rendering."
+      ],
+      impactMetrics: [
+        { label: "Latency", value: "35% Faster" },
+        { label: "Audience", value: "500k+ Active Users" },
+        { label: "Compliance", value: "Banking Regulations" },
+        { label: "Pattern", value: "Microservices Gateway" }
+      ],
+      tags: ["Java / J2EE", "Spring Boot", "Liferay DXP", "Microservices Gateway", "Oracle SQL", "REST APIs"],
+      type: "Enterprise System"
     }
   ],
 
