@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Abhishek Pathania - Modern Developer Portfolio 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, high-performance personal portfolio built with **React 18**, **Vite**, and **Tailwind CSS**, designed for enterprise software engineers.
 
-## Available Scripts
+🌐 **Live Website**: [https://001abhishek.github.io/portfolio/](https://001abhishek.github.io/portfolio/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ⚡ Tech Stack & Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Core**: React 18, Vite 6 (ultra-fast HMR and bundle compilation under 2s)
+- **Styling**: Tailwind CSS with custom glassmorphism, glowing accents, and dynamic background grid
+- **Icons**: Lucide React
+- **Theme Support**: Dark / Light theme toggle with automatic persistence (`localStorage`)
+- **Interactive Sections**:
+  - **Hero**: Engaging headline, status pill, CTAs, metrics grid, and social links
+  - **Experience**: Timeline visualization of career history at Tata Consultancy Services & Windex
+  - **Projects**: Filterable project showcase with live demo and GitHub source links
+  - **Skills**: Categorized competence grid (Backend, Frontend, Databases, DevOps, Engineering Disciplines)
+  - **About Me**: Professional narrative, core values, and GTU Computer Science degree details
+  - **Contact**: One-click email copy with feedback toast, direct mailto, and downloadable PDF resume
+- **Hosting & CI/CD**: Automated deployment to **GitHub Pages** via GitHub Actions workflow (`.github/workflows/deploy.yml`) + manual `npm run deploy` fallback.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Local Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v18+)
+- npm (v9+)
 
-### `npm run build`
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/001Abhishek/portfolio.git
+cd portfolio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Start development server
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Production Build
+```bash
+# Compiles optimized production bundle into /dist
+npm run build
 
-### `npm run eject`
+# Preview production build locally
+npm run preview
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 GitHub Pages Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Method 1: Automated via GitHub Actions (Recommended)
+1. Push your changes to the `master` or `main` branch:
+   ```bash
+   git add .
+   git commit -m "Modernize portfolio and configure GitHub Pages"
+   git push origin master
+   ```
+2. In your GitHub repository:
+   - Navigate to **Settings** > **Pages**.
+   - Under **Build and deployment** > **Source**, select **GitHub Actions**.
+3. Every push will now build and deploy the latest site automatically!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Method 2: Manual Deploy with `gh-pages`
+If you prefer deploying directly to a `gh-pages` branch via the CLI:
+```bash
+npm run deploy
+```
+Then under **Settings** > **Pages**, ensure the source is set to deploy from the `gh-pages` branch.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Updating Your Content
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+All personal info, experiences, projects, skills, and links are cleanly separated in a single modular file:
+👉 [`src/data/portfolioData.js`](./src/data/portfolioData.js)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To add new projects or update work experience, simply edit that file!

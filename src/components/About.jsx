@@ -1,84 +1,98 @@
-import React from "react";
-import "../Styles/aboutMe.css";
-import FrontEndImg from "../images/frontEnd.webp";
-import BackEndImg from "../images/backEnd.webp";
+import React from 'react';
+import { User, GraduationCap, Award, BookOpen, Rocket, HeartHandshake } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
 
-const About = () => {
+export default function About() {
+  const { personalInfo } = portfolioData;
+
   return (
-    <div className="container-fluid about-me">
-      <div className="text-center">
-        <h1>About Me</h1>
-        <hr />
-      </div>
-      <p className="about-me">My name is Abhishek Pathania and I am a Software Developer, currently living in Gujarat, India.
-          I have a Bachelor of Science in Computer Science from Gujarat Technological University. 
-           I am both driven and self-motivated, and I am constantly experimenting with new technologies and 
-           techniques. I love Java and I'm passionate about Backend 
-        Development, and strive to better 
-        myself as a developer, and the development community as a whole. In my free time,
-         I like to write blogs and read books. 
-           </p>
-      <div className="row front-end" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
-        <img src={FrontEndImg} id="invisible-skills-img" />
-        
-        <ul>
-          <b>FRONT-END SKILLS</b>
-          <li>-> HTML / CSS </li>
-          <li>-> JavaScript </li>
-          <li>-> JSP</li>
-          <li>-> Bootstrap</li>
-          <li>-> React(learning)</li>
-        </ul>
-        <img src={FrontEndImg} id="skills-img-disappear" />
-      </div>
-
-      <div className="row back-end" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
-        <img src={BackEndImg} id="skills-img" />
-
-        <ul>
-          <b>BACK-END SKILLS</b>
-          <li> -> Spring Boot </li>
-          <li> -> MySQL</li>
-          <li> -> REST </li>
-          <li> -> Mongo Db, AWS, Node JS/ Express JS(learning) </li>
-
-        </ul>
-      </div>
-
-      <div className="row extra-skills" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600">
-        JAVA Object Oriented Programming | Data Structures and Algorithms 
-        Software Design and Architectures - SOLID, MVC | Tools - Git, JIRA, SonarLint |
-        NPM | JUnit | Jenkins
-      </div>
-
-      {/* <div
-        className="row extra-skills-invisible"
-        style={{ textJustify: "center" }}
-      >
-        <ul>
-          <li> -> JAVA Object Oriented Programming </li>
-          <li> -> Unity Engine With C# </li>
-          <li> -> Photoshop CC </li>
-          <li> -> Blender 3D Modelling </li>
-        </ul>
-      </div> */}
-
-      <div
-        className="row text-center justify-content-center about-description " data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1600"
-        style={{ marginBottom: 20 }}
-      >
-        <div className="col-sm-6">
-          <p>
-            I am willing to work on front-end and back-end of 
-            applications. I am interested in building scalable projects,
-            and managing large code bases. Currently, I am learning React and Spring Boot.
-            In my spare time I love working on
-            side projects to build my skills and continue learning.
+    <section id="about" className="py-24 relative bg-slate-900/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-indigo-500/20 text-indigo-400 text-xs font-mono uppercase tracking-wider mb-4">
+            <User className="w-3.5 h-3.5" />
+            <span>Background</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+            About Abhishek
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg">
+            A software engineer dedicated to building scalable backend services and impactful digital solutions.
           </p>
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default About;
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Main Bio & Narrative */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800/80 space-y-4 text-slate-300 leading-relaxed text-base sm:text-lg font-light">
+              {personalInfo.aboutBio.map((para, idx) => (
+                <p key={idx}>{para}</p>
+              ))}
+            </div>
+
+            {/* Education Card */}
+            <div className="glass-panel p-6 rounded-2xl border border-slate-800/80 flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex-shrink-0">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-wider text-indigo-400">
+                  Academic Background
+                </span>
+                <h3 className="text-lg font-bold text-white mt-1">
+                  {personalInfo.education.degree}
+                </h3>
+                <div className="text-sm text-slate-300 font-medium">
+                  {personalInfo.education.institution} • <span className="font-mono text-slate-400">{personalInfo.education.period}</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-400 mt-2">
+                  {personalInfo.education.description}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Pillars & Values */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            <div className="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-indigo-500/40 glow-card">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
+                  <Rocket className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white">Scalable Architecture</h4>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-400">
+                Designing resilient, modular microservices and database structures built for high concurrent traffic and low operational friction.
+              </p>
+            </div>
+
+            <div className="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-indigo-500/40 glow-card">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white">Continuous Evolution</h4>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-400">
+                Always eager to embrace cutting-edge tools, deep dive into performance profiling, write technical blogs, and experiment with new ideas.
+              </p>
+            </div>
+
+            <div className="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-indigo-500/40 glow-card">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                  <HeartHandshake className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white">Collaborative Spirit</h4>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-400">
+                Thriving in agile cross-functional environments, mentoring peers, and driving projects forward with clear communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
