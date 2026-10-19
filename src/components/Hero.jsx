@@ -12,25 +12,25 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="pt-8 pb-4">
+    <section id="hero" className="pt-6 pb-2">
       {/* Role tag */}
-      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/80 mb-6">
+      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/80 mb-5">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
         <span>{personalInfo.role} @ {personalInfo.currentCompany}</span>
       </div>
 
       {/* Main Title */}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6 leading-tight max-w-4xl">
-        I build and run distributed, event-driven systems on AWS.
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mb-4 leading-tight max-w-3xl">
+        {personalInfo.headline}
       </h1>
 
-      {/* Direct, authentic description */}
-      <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-3xl mb-8">
-        System Development Engineer 2 at Amazon (India Development Center). Focused on architectural simplicity, bounded concurrency, single-owner failure recovery, and safe progressive deployment.
+      {/* Subtitle */}
+      <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl mb-8">
+        {personalInfo.subtitle}
       </p>
 
-      {/* Primary Links & Actions */}
-      <div className="flex flex-wrap items-center gap-3 mb-12">
+      {/* Actions */}
+      <div className="flex flex-wrap items-center gap-2.5 mb-10">
         <a
           href="#projects"
           onClick={(e) => scrollTo(e, '#projects')}
@@ -80,30 +80,30 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Metrics Row - Crisp minimalist border cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
-        <div className="p-4 rounded-xl card-surface">
-          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Cold Starts</div>
-          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">8–11s → ~1.5s</div>
-          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">P99 latency −70%</div>
+      {/* Compact Metrics Row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-5 border-t border-zinc-200 dark:border-zinc-800/80">
+        <div className="p-3.5 rounded-lg card-surface">
+          <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Cold Starts</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-zinc-900 dark:text-zinc-100 mt-0.5">8–11s → ~1.5s</div>
+          <div className="text-[11px] text-zinc-600 dark:text-zinc-400">P99 latency −70%</div>
         </div>
 
-        <div className="p-4 rounded-xl card-surface">
-          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Bulk Recovery</div>
-          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">6–8h → 10–15m</div>
-          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">MTTR −70%, zero dupes</div>
+        <div className="p-3.5 rounded-lg card-surface">
+          <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Bulk Recovery</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-zinc-900 dark:text-zinc-100 mt-0.5">6–8h → 10–15m</div>
+          <div className="text-[11px] text-zinc-600 dark:text-zinc-400">MTTR −70%, zero dupes</div>
         </div>
 
-        <div className="p-4 rounded-xl card-surface">
-          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Safe Continuous Delivery</div>
-          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">48% → 84% CD</div>
-          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">Auto-rollback & canaries</div>
+        <div className="p-3.5 rounded-lg card-surface">
+          <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Continuous Delivery</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-zinc-900 dark:text-zinc-100 mt-0.5">48% → 84% CD</div>
+          <div className="text-[11px] text-zinc-600 dark:text-zinc-400">Auto-rollback & canaries</div>
         </div>
 
-        <div className="p-4 rounded-xl card-surface">
-          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-1">Bedrock RAG Accuracy</div>
-          <div className="text-lg sm:text-xl font-bold font-mono text-zinc-900 dark:text-zinc-100">~60% → ~95%</div>
-          <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5">Intent-routed, 25+ teams</div>
+        <div className="p-3.5 rounded-lg card-surface">
+          <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Bedrock RAG Accuracy</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-zinc-900 dark:text-zinc-100 mt-0.5">~60% → ~95%</div>
+          <div className="text-[11px] text-zinc-600 dark:text-zinc-400">Adopted by 25+ teams</div>
         </div>
       </div>
     </section>
