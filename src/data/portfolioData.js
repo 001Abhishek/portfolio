@@ -1,6 +1,6 @@
 export const portfolioData = {
   personalInfo: {
-    name: "Abhishek Sudarshan",
+    name: "Abhishek S Pathania",
     role: "System Development Engineer 2 (SDE 2)",
     currentCompany: "Amazon",
     location: "India",
