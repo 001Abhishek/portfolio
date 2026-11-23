@@ -16,9 +16,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
   const navLinks = [
     { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
-    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -35,11 +34,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ${
         scrolled
-          ? 'bg-white/90 dark:bg-[#0b0c0e]/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/80 py-3'
+          ? 'bg-[#fafafa]/95 dark:bg-[#0b0c0e]/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/80 py-3'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand */}
           <a
@@ -47,7 +46,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             onClick={(e) => scrollTo(e, '#root')}
             className="flex items-center gap-2.5 text-zinc-900 dark:text-zinc-100 font-semibold tracking-tight hover:opacity-80 transition-opacity"
           >
-            <span>Abhishek Pathania</span>
+            <span>{portfolioData.personalInfo.name}</span>
             <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-mono font-normal bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               Amazon SDE 2

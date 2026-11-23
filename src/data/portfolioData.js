@@ -9,14 +9,76 @@ export const portfolioData = {
     linkedin: "https://www.linkedin.com/in/abhishek-s-pathania-095816137/",
     resumeUrl: "./AbhishekResume.pdf",
     headline: "I build and run distributed, event-driven systems on AWS.",
-    subtitle: "System Development Engineer 2 at Amazon. Specializing in architecture, scale, failure recovery, and safe delivery.",
-    aboutBio: "I am a System Development Engineer 2 at Amazon (India Development Center) with a Computer Science degree from Gujarat Technological University. My work focuses on operating distributed event-driven systems on AWS—tuning JVM/Kotlin serverless latency, orchestrating multi-day Step Functions workflows with single-retry ownership, executing zero-trust security migrations, and building reliable production AI applications on Amazon Bedrock.",
+    subtitle: "System Development Engineer 2 at Amazon — architecture, scale, failure recovery, and safe delivery.",
+    aboutBio: "System Development Engineer 2 at Amazon (India Development Center) with a B.S. in Computer Science. Focused on high-throughput AWS architectures, JVM serverless performance, and production AI pipelines on Amazon Bedrock.",
     education: {
       degree: "B.S. in Computer Science & Engineering",
       institution: "Gujarat Technological University",
       period: "2015 — 2019"
     }
   },
+
+  projects: [
+    {
+      id: "zero-trust-access",
+      title: "Zero-Trust Access to Stored Assets",
+      metricHighlight: "Zero Pre-Prod Errors",
+      summary: "Replaced replayable pre-signed URLs with identity-bound OIDC access, server-side tenant isolation, and bounded memory.",
+      stack: ["S3", "KMS Context", "OIDC", "Kotlin"]
+    },
+    {
+      id: "serverless-fanout",
+      title: "Serverless Fan-Out at Scale",
+      metricHighlight: "Cold Start 8–11s → ~1.5s · P99 −70%",
+      summary: "Eliminated JVM cold-start spikes and the 256 KB SQS ceiling via S3 claim-check, provisioned concurrency, and token-bucket retries.",
+      stack: ["Lambda", "SQS", "Claim-Check", "CodeDeploy"],
+      demoType: "visualizer",
+      demoLabel: "Inspect Topology"
+    },
+    {
+      id: "self-healing-workflows",
+      title: "Self-Healing Workflows & Bulk Recovery",
+      metricHighlight: "Recovery 6–8h → 10–15m · MTTR −70%",
+      summary: "Assigned single retry owners per failure class with stall alarms, plus an idempotent bulk-recovery CLI saving ~15% on Spot.",
+      stack: ["Step Functions", "EC2 Spot", "CLI Tooling"],
+      demoType: "cli",
+      demoLabel: "Run Recovery CLI"
+    },
+    {
+      id: "scalable-data-access",
+      title: "Scalable, Correct Data Access",
+      metricHighlight: "~65% Faster Lookups · TOCTOU-Safe",
+      summary: "Built backward-compatible OpenSearch cursor pagination with tie-breakers and conditional DynamoDB writes to prevent integrity bugs.",
+      stack: ["DynamoDB", "OpenSearch", "Smithy API"],
+      demoType: "contract",
+      demoLabel: "View Contracts"
+    },
+    {
+      id: "progressive-delivery",
+      title: "Progressive Delivery & Production Safety",
+      metricHighlight: "Full-CD 48% → 84%",
+      summary: "Standardized bake times, composite alarms, auto-rollback, and cross-account canaries—cutting oldest prod code from 53 to 16 days.",
+      stack: ["AWS CDK", "CodeDeploy", "Canaries"]
+    }
+  ],
+
+  alsoBuilt: [
+    {
+      title: "Bedrock RAG Assistant",
+      metric: "~60% → ~95% accuracy",
+      summary: "Slack bot on Bedrock Knowledge Bases with intent routing; adopted by 25+ teams."
+    },
+    {
+      title: "Self-Service Tenant Onboarding",
+      metric: "Weeks → Hours",
+      summary: "React + TypeScript wizard wired to LLM code-gen jobs that open boilerplate CRs."
+    },
+    {
+      title: "Batch Fleet Right-Sizing",
+      metric: "−43% compute cost",
+      summary: "Matched batch workloads to memory-optimized EC2 hosts with bounded auto-scaling."
+    }
+  ],
 
   experience: [
     {
@@ -26,111 +88,48 @@ export const portfolioData = {
       period: "2021 — Present",
       location: "India",
       highlights: [
-        "Architecting distributed event-driven platforms and serverless JVM microservices on AWS (Kotlin, Java, TypeScript, Python).",
-        "Led phased migration to identity-bound OIDC storage access with server-side tenant isolation and memory caps (zero pre-prod errors, eliminated silent data corruption).",
-        "Tuned Lambda JVM cold starts from 8–11s to ~1.5s (P99 −70%) and designed claim-check pattern on S3/SQS for large payloads.",
-        "Halved recovery times (MTTR −70%) by instituting single retry ownership per failure class with stall alarms, and built an idempotent bulk-recovery CLI.",
-        "Set team delivery standards (bake time, composite alarms, CodeDeploy gradual shifting, canaries), increasing full-CD from 48% to 84%."
-      ],
-      skills: ["Kotlin", "Java", "AWS Lambda", "Step Functions", "DynamoDB", "S3", "AWS CDK", "Amazon Bedrock"]
+        "Own end-to-end architecture, operational readiness, and primary on-call for distributed event-driven services on AWS.",
+        "Drive cross-team reliability, zero-trust security migrations, and automated safe-delivery standards across production fleets.",
+        "Build internal developer tooling (bulk-recovery CLIs, Bedrock RAG assistants, LLM-backed onboarding portals)."
+      ]
     },
     {
       id: "tcs",
       company: "Tata Consultancy Services",
       role: "Software Engineer (TCS Digital)",
-      period: "June 2019 — 2021",
+      period: "2019 — 2021",
       location: "India",
       highlights: [
         "Built high-concurrency batch migration modules orchestrating multi-tenant branch transfers via REST APIs with zero data loss.",
-        "Delivered Spring Boot microservice & Liferay DXP Proof-of-Concepts for a tier-1 European banking client modernizing core monolith flows."
-      ],
-      skills: ["Java/J2EE", "Spring Boot", "RESTful APIs", "SQL", "Liferay DXP"]
+        "Delivered Spring Boot microservice and Liferay DXP PoCs for a tier-1 European banking client."
+      ]
     }
   ],
 
-  projects: [
+  skillIndex: [
     {
-      id: "zero-trust-access",
-      title: "Zero-Trust Access to Stored Assets",
-      metricHighlight: "Zero Pre-Prod Errors",
-      summary: "Migrated multi-consumer asset storage from replayable pre-signed URLs to identity-bound OIDC authenticated access with server-side tenant isolation, eliminating silent data corruption and safely routing images to multimodal models.",
-      tags: ["AWS S3", "KMS Context", "OIDC Auth", "Tenant Isolation", "Kotlin"]
+      label: "Languages",
+      value: "Kotlin (primary), Java, TypeScript, Python"
     },
     {
-      id: "serverless-fanout",
-      title: "Serverless Fan-Out at Scale",
-      metricHighlight: "Cold Start 8–11s → ~1.5s (P99 −70%)",
-      summary: "Overcame Lambda JVM cold starts and the 256KB queue message ceiling using an S3 claim-check pattern, provisioned concurrency tuning, and token-bucket retry budgets that absorb throttle bursts without quota increases.",
-      tags: ["AWS Lambda", "SQS Fan-Out", "Claim-Check", "JVM Tuning", "CodeDeploy"]
+      label: "AWS & Distributed",
+      value: "Lambda, Step Functions, SQS/SNS, S3, ECS Fargate, EC2 Spot, KMS, IAM, OIDC"
     },
     {
-      id: "self-healing-workflows",
-      title: "Self-Healing Workflows & Bulk Recovery",
-      metricHighlight: "Recovery 6–8h → 10–15m (MTTR −70%)",
-      summary: "Eliminated duplicate side-effects in multi-day Step Functions by instituting single retry ownership per failure class with stall alarms, and built an idempotent bulk-recovery CLI (redrive, restart from failed step, dry-run) saving ~15% compute on Spot.",
-      tags: ["Step Functions", "EC2 Spot", "Idempotent Recovery", "CLI Tooling", "Stall Alarms"]
+      label: "Data & Search",
+      value: "DynamoDB (GSIs, conditional & transactional writes), OpenSearch (search_after), S3"
     },
     {
-      id: "scalable-data-access",
-      title: "Scalable, Correct Data Access",
-      metricHighlight: "~65% Faster Lookups • TOCTOU-Safe",
-      summary: "Designed backward-compatible cursor pagination contracts with sort tie-breakers across multiple OpenSearch indexes, pairing conditional DynamoDB writes and reference checks to prevent silent data integrity failures.",
-      tags: ["DynamoDB", "OpenSearch", "search_after", "Smithy API", "Conditional Writes"]
+      label: "Delivery & Ops",
+      value: "AWS CDK, CloudFormation, CodeDeploy gradual shifting, composite alarms, synthetic canaries"
     },
     {
-      id: "progressive-delivery",
-      title: "Progressive Delivery & Production Safety",
-      metricHighlight: "Full-CD 48% → 84%",
-      summary: "Standardized team continuous deployment with bake times, composite alarms, automated rollback, and cross-account synthetic canaries—cutting oldest code in production from 53 to 16 days and catching 17 issues before customer reports.",
-      tags: ["AWS CDK", "CodeDeploy", "Composite Alarms", "Synthetic Canaries", "Bake Time"]
-    }
-  ],
-
-  alsoBuilt: [
-    {
-      title: "Bedrock RAG Assistant for Engineering Teams",
-      metric: "~60% → ~95% Accuracy",
-      summary: "Slack bot on Amazon Bedrock Knowledge Bases with intent-based routing across code, docs, and tickets; adopted by 25+ teams.",
-      tags: ["Amazon Bedrock", "RAG", "Intent Routing"]
+      label: "AI & LLM",
+      value: "Amazon Bedrock (Knowledge Bases RAG, Converse API), Strands Agents, MCP servers, fail-closed evals"
     },
     {
-      title: "Self-Service Tenant Onboarding Portal",
-      metric: "Weeks → Hours",
-      summary: "React + TypeScript multi-step wizard wired to backend APIs and LLM code-generation jobs that opens boilerplate code reviews for new tenants.",
-      tags: ["React + TypeScript", "LLM Code Gen", "Tenant Onboarding"]
-    },
-    {
-      title: "Batch Fleet Capacity Right-Sizing",
-      metric: "−43% Compute Cost",
-      summary: "Matched a high-volume batch processing fleet to memory-optimized EC2 hosts with auto-scaling boundaries.",
-      tags: ["EC2 Spot", "Cost Optimization", "Capacity Planning"]
-    }
-  ],
-
-  skillCategories: [
-    {
-      category: "Distributed Systems & AWS",
-      items: ["Event-driven fan-out", "Claim-check pattern", "Jittered exponential backoff", "Step Functions orchestration", "Multi-tenant OIDC isolation", "Lambda, SQS, SNS, S3, ECS, KMS, IAM"]
-    },
-    {
-      category: "Backend & Core Engineering",
-      items: ["Kotlin (primary)", "Java", "TypeScript", "Python", "Smithy API models", "Bounded concurrency & memory caps", "Coroutines", "JUnit 5 & MockK"]
-    },
-    {
-      category: "AI & LLM Engineering",
-      items: ["Amazon Bedrock Knowledge Bases (RAG)", "Converse API", "Intent classification", "Strands Agents", "MCP servers", "Fail-closed pipelines"]
-    },
-    {
-      category: "Databases & Search",
-      items: ["DynamoDB (GSI, conditional & transactional writes)", "OpenSearch (search_after cursor pagination)", "TOCTOU safety", "S3 offload"]
-    },
-    {
-      category: "DevOps & Safe Delivery",
-      items: ["AWS CDK (TypeScript)", "CloudFormation", "Continuous Deployment with bake time", "CodeDeploy gradual shifting", "Composite alarms", "Synthetic canaries", "Primary on-call"]
-    },
-    {
-      category: "Frontend & Testing",
-      items: ["React + TypeScript", "Multi-step async wizards", "Web security (anti-CSRF, TLS 1.2+)", "Playwright & Cypress E2E testing"]
+      label: "Frontend & Test",
+      value: "React, TypeScript, Playwright, Cypress, JUnit 5, MockK, Smithy APIs"
     }
   ]
 };
